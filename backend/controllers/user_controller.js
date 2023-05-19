@@ -19,7 +19,7 @@ class UserController {
     async AddUser(req, res, next)
     {
         try {
-            res.json({"endpoint": "adduser"})
+            res.json(await user_service.AddUser(req))
         } catch(e) {
             res.json({"error": "EXCEPTION"})
         }

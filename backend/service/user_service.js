@@ -7,6 +7,7 @@ class UserService {
     // вся информация хранится в body то есть чтоб к ней обратится мы пишем req.body
     async AddUser(req) {
         // с помощью такой конструкции мы сразу ищем в запросе нужные нам поля для юзера и записываем их в переменные
+
         const { firstName, lastName, email, numberPhone, position, jobPlace } = req.body;
     
         try {
@@ -14,7 +15,7 @@ class UserService {
             // метод create 
             // для работы с бд используем prisma client потом выбираем таблицу с которой
             // будем работать в нашем случаее user после этого вызываем метод что хоти сделать
-            const newUser = await prisma.user.create({
+            const newUser = await prisma_client.user.create({
                 data: {
                     firstName,
                     lastName,

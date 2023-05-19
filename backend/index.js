@@ -11,6 +11,9 @@ const app = express()
 app.use(express.json())
 app.use(cookie_parser())
 app.use(cors())
+
+//когда в постмане отправляете запрос приложение смотрит какой роутер в1`ы хотите
+//использовать после этого переходим в файлик роутера
 app.use("/api", router)
 
 const start = async() => {

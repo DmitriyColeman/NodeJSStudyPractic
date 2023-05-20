@@ -28,16 +28,18 @@ class UserController {
     async DelUser(req, res, next)
     {
         try {
-            res.json({"endpoint": "deluser"})
+            res.json(await user_service.DeleteUser(req))
         } catch(e) {
+            console.log(e)
             res.json({"error": "EXCEPTION"})
         }
     }
     async UpdateUser(req, res, next)
     {
         try {
-            res.json({"endpoint": "upduser"})
+            res.json(await user_service.UpdateUser(req))
         } catch(e) {
+            console.log(e)
             res.json({"error": "EXCEPTION"})
         }
     }
